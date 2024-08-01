@@ -27,7 +27,40 @@ import { formSchema } from "@/components/validators/auth";
 type Input = z.infer<typeof formSchema>;
 
 export default function RequestForm() {
-  const { setOverview, setRequestForm, setConfirmation } = useCustomization();
+  const {
+    setOverview,
+    setRequestForm,
+    setConfirmation,
+    model,
+    freeStanding,
+    standardType,
+    profileColor,
+    coveringMaterial,
+    awning,
+    fabricColor,
+    leftWallType,
+    leftWallMaterial,
+    leftMaterialTransparency,
+    leftAwning,
+    leftAwningColor,
+    leftWedgeMaterial,
+    rightWallType,
+    rightWallMaterial,
+    rightMaterialTransparency,
+    rightAwning,
+    rightAwningColor,
+    rightWedgeMaterial,
+    frontWallType,
+    frontLeftWallType,
+    frontRightWallType,
+    verticalAwningColor,
+    frontMaterialTransparency,
+    frontLeftMaterialTransparency,
+    frontRightMaterialTransparency,
+    width,
+    height,
+    depth,
+  } = useCustomization();
   const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<Input>({
@@ -40,6 +73,35 @@ export default function RequestForm() {
       zipCode: "",
       city: "",
       remark: "",
+      model: model,
+      freeStanding: freeStanding ? "Yes" : "No",
+      standardType: standardType,
+      profileColor: profileColor,
+      coveringMaterial: coveringMaterial,
+      awning: awning,
+      fabricColor: fabricColor,
+      leftWallType: leftWallType,
+      leftWallMaterial: leftWallMaterial,
+      leftMaterialTransparency: leftMaterialTransparency,
+      leftAwning: leftAwning ? "Yes" : "No",
+      leftAwningColor: leftAwningColor,
+      leftWedgeMaterial: leftWedgeMaterial ? "Yes" : "No",
+      rightWallType: rightWallType,
+      rightWallMaterial: rightWallMaterial,
+      rightMaterialTransparency: rightMaterialTransparency,
+      rightAwning: rightAwning ? "Yes" : "No",
+      rightAwningColor: rightAwningColor,
+      rightWedgeMaterial: rightWedgeMaterial ? "Yes" : "No",
+      frontWallType: frontWallType,
+      frontLeftWallType: frontLeftWallType,
+      frontRightWallType: frontRightWallType,
+      verticalAwningColor: verticalAwningColor,
+      frontMaterialTransparency: frontMaterialTransparency,
+      frontLeftMaterialTransparency: frontLeftMaterialTransparency,
+      frontRightMaterialTransparency: frontRightMaterialTransparency,
+      width: width.toString(),
+      height: height.toString(),
+      depth: depth.toString(),
     },
   });
 
@@ -178,6 +240,375 @@ export default function RequestForm() {
                 </FormItem>
               )}
             />
+
+            {/* Description Section */}
+            <div className="hidden">
+              <FormField
+                control={form.control}
+                name="model"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="model" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="freeStanding"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="freeStanding" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="standardType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="standardType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="profileColor"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="profileColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="coveringMaterial"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="coveringMaterial" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="awning"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="awning" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="fabricColor"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="fabricColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftWallType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="leftWallType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftWallMaterial"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="leftWallMaterial" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftMaterialTransparency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="leftMaterialTransparency"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftAwning"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="leftAwning" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftAwningColor"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="leftAwningColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="leftWedgeMaterial"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="leftWedgeMaterial" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightWallType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="rightWallType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightWallMaterial"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="rightWallMaterial" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightMaterialTransparency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="rightMaterialTransparency"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightAwning"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="rightAwning" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightAwningColor"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="rightAwningColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rightWedgeMaterial"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="rightWedgeMaterial" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontWallType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="frontWallType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontLeftWallType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="frontLeftWallType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontRightWallType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="frontRightWallType" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="verticalAwningColor"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="verticalAwningColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontMaterialTransparency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="frontMaterialTransparency"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontLeftMaterialTransparency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="frontLeftMaterialTransparency"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="frontRightMaterialTransparency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="frontRightMaterialTransparency"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="width"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="width" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="height"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="height" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="depth"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="depth" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            {/* Description Section End */}
+
             <div className="w-full text-right pt-8">
               <Button
                 className="m-2"
