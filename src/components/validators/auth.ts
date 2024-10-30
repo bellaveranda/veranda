@@ -16,7 +16,7 @@ export const formSchema = z.object({
     .max(200, "Address can't exceed 200 characters"),
   zipCode: z
     .string()
-    .regex(/^\d{5}(-\d{4})?$/, "Invalid zip code")
+    .regex(/^\d{4}\s?[a-zA-Z]{2}$/, "Invalid zip code")
     .optional(),
   city: z
     .string()
